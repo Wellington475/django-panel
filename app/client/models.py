@@ -11,11 +11,25 @@ class Client(models.Model):
 	color = models.CharField(max_length=155, null = True)
 	image = models.CharField(max_length=155, null = True)
 	
+	update_date = models.DateTimeField(auto_now=True)
+	create_date = models.DateTimeField(auto_now_add=True)
+	status = models.SmallIntegerField(default=1)
+
 	def __unicode__(self):
 		return client
+
+	class Meta:
+		db_table = "client"
 
 class Login(models.Model):
 	id_login = models.AutoField(primary_key=True)
 	client = models.ForeignKey('Client')
-	name = models.CharField(max_length=250)
-	icon = models.CharField(max_length=250)
+	email = models.CharField(max_length=250)
+	password = models.CharField(max_length=250)
+
+	update_date = models.DateTimeField(auto_now=True)
+	create_date = models.DateTimeField(auto_now_add=True)
+	status = models.SmallIntegerField(default=1)
+
+	class Meta:
+		db_table = "login"
