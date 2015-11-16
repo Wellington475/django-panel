@@ -4,13 +4,13 @@
         
         {% load staticfiles compress %}
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         {% if client.name %}
             <title>{{ client.name }}</title>
         {% else %}
             <title>Django-Panel</title>
         {% endif %}
         
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta http-equiv="content-language" content="pt"/>
@@ -40,8 +40,12 @@
         <meta name="theme-color" content="{{ client.color }}"/>
         <link rel="canonical" href="{{ request.build_absolute_uri }}"/>
         <link rel="shortcut icon" href="{{ client.image }}"/>
+
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
         {% compress css %}
-            <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+            <link rel="stylesheet" type="text/css" href="{% static "octicons/octicons.css" %}" />
+            <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />
+            <link rel="stylesheet" type="text/css" href="{% static "css/custom.css" %}" />
         {% endcompress %}
         
     </head>

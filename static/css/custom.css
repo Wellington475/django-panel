@@ -1,0 +1,43 @@
+body {
+	background-color: #03669a;
+	font-family: "Roboto", "Helvetica Neue", Helvetica, "Open Sans", sans-serif;
+	font-size: 14px;
+}
+
+.octicon {
+	
+	font: normal normal normal 16px/1 octicons;
+	display: inline-block;
+	text-decoration: none;
+	text-rendering: auto;
+	font-size: 32px;
+	min-width: 32px;
+}
+
+.app-title {
+	font-weight: bold;
+	letter-spacing: 0.4px;
+	white-space: nowrap;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5), 0px 1px 5px rgba(0, 0, 0, 0.5);
+	color: #fff;
+}
+
+.app-icon {
+	color: #fff;
+	border-radius: 16px;
+	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	display: inline-block;
+	margin: auto;
+	padding: 20px;
+	text-align: center;
+}
+
+.app-icon.green {
+	background-color: #16723e;
+}
+
+.app-icon.yellow-ligth {
+	background-color: #d4ec9f;
+	color: #000;
+}

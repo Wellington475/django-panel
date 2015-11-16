@@ -1,4 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-	Django-Panel
+	{% for app in apps %}
+		<div class="app-icon" style="background-color: {{ app.color }}">
+			<span class="{{ app.icon }}"></span>
+		</div>
+	{% endfor %}
 {% endblock %}
