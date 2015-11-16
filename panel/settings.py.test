@@ -41,6 +41,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'compressor',
     'widget_tweaks',
+    'app.core',
+    'app.desk',
+    'app.client',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,9 +62,13 @@ ROOT_URLCONF = 'panel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'APP_DIRS': False,
         'OPTIONS': {
+            'loaders':[
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader'
+            ],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',

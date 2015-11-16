@@ -5,8 +5,8 @@
         {% load staticfiles compress %}
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        {% if client.title %}
-            <title>{{ client.title }}</title>
+        {% if client.name %}
+            <title>{{ client.name }}</title>
         {% else %}
             <title>Django-Panel</title>
         {% endif %}
@@ -20,13 +20,13 @@
         <meta name="author" content="{{ client.author }}"/>
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="{{ client.title }}" />
+        <meta name="twitter:title" content="{{ client.name }}" />
         <meta name="twitter:description" content="{{ client.description }}" />
         <meta name="twitter:url" content="{{ request.build_absolute_uri }}" />
         <meta name="twitter:image" content="{{ request.build_absolute_uri }}" />
 
         <meta property="og:locale" content="pt_BR" />
-        <meta property="og:title" content="{{ client.title }}" />
+        <meta property="og:title" content="{{ client.name }}" />
         <meta property="og:description" content="{{ client.description }}" />
 
         {% if article %}
@@ -47,5 +47,9 @@
     </head>
     <body>
     	{% block content %}{% endblock %}
+        {% compress js %}
+            <script src="{% static "js/jquery.min.js" %}" type="text/javascript"></script>
+            <script src="{% static "js/backbone.min.js" %}" type="text/javascript"></script>
+        {% endcompress %}
     </body>
 </html>
